@@ -3,6 +3,7 @@ import CountryList from './components/CountryList';
 import GlobalInfo from './components/GlobalInfo';
 import { Country, ResponseData } from './types';
 import { Global,css} from "@emotion/react";
+import { active } from 'd3';
 
 const App:React.FunctionComponent = () => {
 
@@ -20,6 +21,20 @@ const App:React.FunctionComponent = () => {
     fetchData();
   },[]);
 
+  const onCountryClick = (country: Country)=>{
+    const countryIndex=activeCountries.findIndex(
+      (activeCountry)=> activeCountry.ID===country.ID
+    );
+
+    if(countryIndex>-1){
+      const newActiveCountries = [...activeCountries];
+      newActiveCountries.splice(countryIndex,1);
+      setActiveCountries(newActiveCountries);
+    }else{
+      setActiveCountries([...activeCountries,country])
+    }
+  }
+
   return (
     <div>
       <Global styles={css`
@@ -28,6 +43,11 @@ const App:React.FunctionComponent = () => {
           color: #000;
         }
       `}/>
+
+      {activeCountries.map((aCountry) => (
+        <span>{aCountry.Country}</span>
+      ))}
+
       {data?(
         <>
           <GlobalInfo 
@@ -35,7 +55,7 @@ const App:React.FunctionComponent = () => {
             newDeaths={data?.Global.NewDeaths} 
             newRecovered={data?.Global.NewRecovered} 
           />
-          <CountryList countries={data.Countries}/>
+          <CountryList countries={data.Countries} onItemClick={onCountryClick}/>
         </>
 
       ) : (
