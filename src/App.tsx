@@ -3,7 +3,7 @@ import CountryList from './components/CountryList';
 import GlobalInfo from './components/GlobalInfo';
 import { Country, ResponseData } from './types';
 import { Global,css} from "@emotion/react";
-import { active } from 'd3';
+import BarChart from './components/BarChart';
 
 const App:React.FunctionComponent = () => {
 
@@ -55,6 +55,8 @@ const App:React.FunctionComponent = () => {
             newDeaths={data?.Global.NewDeaths} 
             newRecovered={data?.Global.NewRecovered} 
           />
+          <hr/>
+          <BarChart/>
           <CountryList countries={data.Countries} onItemClick={onCountryClick}/>
         </>
 
