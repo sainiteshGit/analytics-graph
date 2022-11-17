@@ -72,13 +72,18 @@ export const data = {
   datasets: [
     {
       label: 'Dataset 1',
-      data: [12,19,3],
+      data: [12,9,3,4,5,6,7,8,9,10,14,15],
      backgroundColor: 'rgba(255, 99, 132, 0.5)',
     },
     {
       label: 'Dataset 2',
-      data: [12,19,3],
+      data: [12,9,3,4,5,6,7,8,9,10,14,15],
       backgroundColor: 'rgba(53, 162, 235, 0.5)',
+    },
+    {
+      label: 'Dataset 3',
+      data: [12,9,3,4,5,6,7,8,9,10,14,15],
+      backgroundColor: 'rgba(55, 162, 138, 2)',
     },
   ],
 };
