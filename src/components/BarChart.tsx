@@ -85,6 +85,11 @@ export const data = {
       data: [12,9,3,4,5,6,7,8,9,10,14,15],
       backgroundColor: 'rgba(55, 162, 138, 2)',
     },
+    {
+      label: 'Dataset 4',
+      data: [12,9,3,4,5,6,7,8,9,10,10,15],
+      backgroundColor: 'rgba(65, 102, 138, 2)',
+    }
   ],
 };
 const BarChart: React.FunctionComponent = () => {
