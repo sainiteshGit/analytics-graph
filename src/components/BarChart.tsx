@@ -99,6 +99,11 @@ export const data = {
       label: 'Dataset 6',
       data: [2,3,1,4,5,6,7,8,6,5,7,2],
       backgroundColor: 'rgba(35, 92, 138, 2)',
+    },
+    {
+      label: 'Dataset 7',
+      data: [12,9,3,4,5,6,7,8,9,10,14,15],
+      backgroundColor: 'rgba(55, 22, 138, 2)',
     }
   ],
 };
