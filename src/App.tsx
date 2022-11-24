@@ -56,7 +56,8 @@ const App:React.FunctionComponent = () => {
             newRecovered={data?.Global.NewRecovered} 
           />
           <hr/>
-          <BarChart/>
+          {activeCountries.length?<BarChart countries={activeCountries}/>:null}
+
           <CountryList countries={data.Countries} onItemClick={onCountryClick}/>
         </>
 
