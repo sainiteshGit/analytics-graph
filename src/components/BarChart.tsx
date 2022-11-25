@@ -21,6 +21,7 @@ import { Country } from '../types';
 
 interface Props{
   countries:Country[];
+  type:string;
 }
 
 export const options = {
@@ -42,13 +43,16 @@ max-width: 700px;
 margin: 0 auto;
 `;
 
-const BarChart: React.FunctionComponent<Props> = ({countries}) => {
+const BarChart: React.FunctionComponent<Props> = ({countries,type
+}) => {
   const generateChartData=()=>{
     const data: number[]=[];
     const labels: string[]=[];
+    const deathData: number[]=[];
 
     countries.forEach((country) => {
       data.push(country.NewConfirmed);
+      deathData.push(country.NewDeaths);
       labels.push(country.Country);
     });
 
@@ -56,8 +60,8 @@ const BarChart: React.FunctionComponent<Props> = ({countries}) => {
       labels,
       datasets: [
         {
-          label: 'New Confirmed Data',
-          data,
+          label: type==='deaths'?'New Deaths':'New Confirmed Cases',
+          data:type==='deaths'?deathData:data,
                 backgroundColor:[
                     "rgba(255,99,32,0.2)",
                     "rgba(255,162,235,0.2)",
