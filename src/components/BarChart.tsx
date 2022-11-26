@@ -49,10 +49,12 @@ const BarChart: React.FunctionComponent<Props> = ({countries,type
     const data: number[]=[];
     const labels: string[]=[];
     const deathData: number[]=[];
+    const recoveredData: number[]=[];
 
     countries.forEach((country) => {
       data.push(country.NewConfirmed);
       deathData.push(country.NewDeaths);
+      recoveredData.push(country.NewRecovered);
       labels.push(country.Country);
     });
 
@@ -60,8 +62,8 @@ const BarChart: React.FunctionComponent<Props> = ({countries,type
       labels,
       datasets: [
         {
-          label: type==='deaths'?'New Deaths':'New Confirmed Cases',
-          data:type==='deaths'?deathData:data,
+          label: type==='deaths'?'New Deaths':(type==='recovered'?'New Recovered':'New Confirmed Cases'),
+          data:type==='deaths'?deathData:(type==='recovered'?recoveredData:data),
                 backgroundColor:[
                     "rgba(255,99,32,0.2)",
                     "rgba(255,162,235,0.2)",

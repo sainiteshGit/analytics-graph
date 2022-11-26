@@ -58,6 +58,8 @@ const App:React.FunctionComponent = () => {
           <hr/>
           {activeCountries.length?<BarChart countries={activeCountries} type=''/>:null}
           {activeCountries.length?<BarChart countries={activeCountries} type='deaths'/>:null}
+          {activeCountries.length?<BarChart countries={activeCountries} type='recovered'/>:null}
+
 
           <CountryList countries={data.Countries} onItemClick={onCountryClick}/>
         </>
