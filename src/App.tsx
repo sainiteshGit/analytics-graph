@@ -44,9 +44,9 @@ const App:React.FunctionComponent = () => {
         }
       `}/>
 
-      {activeCountries.map((aCountry) => (
+      {/* {activeCountries.map((aCountry) => (
         <span>{aCountry.Country}</span>
-      ))}
+      ))} */}
 
       {data?(
         <>
