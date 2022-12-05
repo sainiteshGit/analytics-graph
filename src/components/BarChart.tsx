@@ -68,7 +68,7 @@ const BarChart: React.FunctionComponent<Props> = ({countries,type
                     "rgba(255,99,32,0.2)",
                     "rgba(95,12,95,0.2)",
                     "rgba(255,96,135,90)",
-                    "rgba(55,162,23,0.2)",
+                    "rgba(55,12,83,0.2)",
                     "rgba(25,62,35,0.2)"
                 ],
                 borderWidth: 1
