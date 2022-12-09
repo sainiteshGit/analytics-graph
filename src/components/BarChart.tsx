@@ -65,7 +65,7 @@ const BarChart: React.FunctionComponent<Props> = ({countries,type
           label: type==='deaths'?'New Deaths':(type==='recovered'?'New Recovered':'New Confirmed Cases'),
           data:type==='deaths'?deathData:(type==='recovered'?recoveredData:data),
                 backgroundColor:[
-                    "rgba(255,99,32,0.2)",
+                    "rgba(2,99,32,0.2)",
                     "rgba(95,12,95,0.5)",
                     "rgba(255,96,3,90)",
                     "rgba(55,12,13,0.2)",
